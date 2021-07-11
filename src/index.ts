@@ -30,7 +30,7 @@ type parambasic = FastifyRequest<{ Params: { tid: string } }>
 // routes
 server.get('/style.css', async (request, reply) => { reply.sendFile('compiled.css') });
 server.get('/:tid', async (request: parambasic, reply: FastifyReply) => {
-    const orders = await petitio(`http://localhost:3000/orders/${request.params?.tid}/`).json();
+    const orders = await petitio(`http://localhost:3069/orders/${request.params?.tid}/`).json();
     reply.view('index', { orders: orders.orderlist });
 });
 
