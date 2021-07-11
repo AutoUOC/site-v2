@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AutoUOC</title>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body data-theme="main" data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="home">
+        <div class="form-control">
+            <label class="label">
+                <span class="label-text">Enter ID</span>
+            </label>
+            <input type="text" placeholder="username" class="input input-primary input-bordered">
+        </div>
+    </main>
+
+    <script>
+        barba.init({
+            transitions: [{
+                name: 'default-transition',
+                leave() {
+                    // create your stunning leave animation here
+                },
+                enter() {
+                    // create your amazing enter animation here
+                }
+            }]
+        });
+    </script>
+</body>
+
+</html>
