@@ -28,6 +28,7 @@
         "tailwindcss": "^2.2.4"
     },
     "dependencies": {
+        "@tailwindcss/typography": "^0.4.1",
         "@types/ejs": "^3.0.7",
         "@types/node": "^16.3.1",
         "daisyui": "^1.6.1",
