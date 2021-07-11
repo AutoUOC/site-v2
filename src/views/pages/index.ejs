@@ -156,15 +156,15 @@
                     <div class="stats shadow w-full my-6">
                         <div class="stat place-items-center place-content-center flex items-center flex-col">
                             <div class="stat-title">Unclaimed</div>
-                            <div class="stat-value text-error">12</div>
+                            <div class="stat-value text-error"><%- orders.filter(e => e.status === 'unclaimed').length %></div>
                         </div>
                         <div class="stat place-items-center place-content-center flex items-center flex-col">
                             <div class="stat-title">Claimed</div>
-                            <div class="stat-value text-warning">26</div>
+                            <div class="stat-value text-warning"><%- orders.filter(e => e.status === 'claimed').length %></div>
                         </div>
                         <div class="stat place-items-center place-content-center flex items-center flex-col">
                             <div class="stat-title">Completed</div>
-                            <div class="stat-value text-success">32</div>
+                            <div class="stat-value text-success"><%- orders.filter(e => e.status === 'completed').length %></div>
                         </div>
                     </div>
 
