@@ -2,6 +2,7 @@ import fastify from "fastify";
 import pointOfView from "point-of-view";
 import fastifyStatic from 'fastify-static';
 import * as path from 'path';
+import petitio from "petitio";
 
 declare module "fastify" {
     interface FastifyReply {
@@ -25,12 +26,15 @@ server.register(fastifyStatic, {
 
 // routes
 server.get('/style.css', async (request, reply) => { reply.sendFile('compiled.css') });
-server.get('/', async (request, reply) => { reply.view('index') });
+server.get('/', async (request, reply) => {
+    const orders = await petitio(`http://localhost:3000/orders/528396/`).json();
+    reply.view('index', { orders: orders.orderlist });
+});
 
 // start
 const start = async () => {
     try {
-        await server.listen(3000);
+        await server.listen(5000);
         const address = server.server.address();
         const port = typeof address === 'string' ? address : address?.port;
         console.log(`server live at localhost:${port}`);
