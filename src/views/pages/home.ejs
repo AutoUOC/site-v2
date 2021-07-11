@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AutoUOC</title>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body data-theme="cupcake" data-barba="wrapper" class="bg-base-300 p-12 pt-6 min-h-screen">
+
+    <div class="navbar mb-12 shadow-lg bg-primary text-neutral-content rounded-box">
+        <div class="flex-1 hidden px-2 mx-2 lg:flex">
+            <span class="text-lg font-bold">
+                AutoUOC
+            </span>
+        </div>
+        <div class="flex-1 lg:flex-none">
+            <div class="form-control">
+                <input type="text" placeholder="Search Shops" class="input input-primary">
+            </div>
+        </div>
+        <div class="flex-none">
+            <button class="btn btn-square btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="inline-block w-6 h-6 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <main data-barba="container" data-barba-namespace="home" class="flex">
+
+        <div
+            class="min-h-screen  overflow-hidden hero bg-gradient-to-br from-primary to-primary-focus rounded-2xl text-primary-content">
+            <div class="flex-col justify-between w-full max-w-6xl mt-10 mb-48 hero-content">
+                <h1 class="py-4 mb-2 font-extrabold text-center font-title lg:py-10 lg:py-0">
+                    <div class="mb-2 text-5xl lg:text-7xl">
+                        AutoUOC
+                    </div>
+                    <div class="text-4xl lg:text-xl">
+                        Automatically Updating Unclaimed Orders Center for Scratch Request Shops
+                    </div>
+                </h1>
+                <div
+                    class="flex flex-col items-center justify-center w-full space-y-10 lg:space-x-4 lg:space-y-0 lg:flex-row">
+                    <div
+                        class="flex-1 w-full max-w-xs text-left bg-transparent text-primary-content border-2 border-opacity-40 border-primary-content mockup-code lg:mx-0">
+                        <pre><code>--uoc new</code></pre>
+                    </div>
+                    <div class="max-w-sm my-2 text-left">
+                        <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                class="inline-block w-6 h-6 mb-2 mr-2 stroke-current">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Automatically updates with orders
+                        </div>
+                        <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                class="inline-block w-6 h-6 mb-2 mr-2 stroke-current">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Easy to use UI and Commands
+                        </div>
+                        <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                class="inline-block w-6 h-6 mb-2 mr-2 stroke-current">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            One click setup
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center flex-1 mt-4 space-x-2 lg:mt-12 lg:justify-start"><a
+                        href="/shop/528396" class="lg:btn-lg btn btn-ghost"><span
+                            class="hidden md:inline">See</span>&nbsp; example
+                    </a> <a href="/start" class="shadow-2xl lg:btn-lg btn">
+                        Get Started
+                    </a></div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        barba.init({
+            transitions: [{
+                name: 'default-transition',
+                leave() {
+                    // create your stunning leave animation here
+                },
+                enter() {
+                    // create your amazing enter animation here
+                }
+            }]
+        });
+    </script>
+</body>
+
+</html>
