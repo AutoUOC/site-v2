@@ -1,4 +1,4 @@
-import fastify from "fastify";
+import { fastify, FastifyRequest, FastifyReply } from "fastify";
 import pointOfView from "point-of-view";
 import fastifyStatic from 'fastify-static';
 import * as path from 'path';
@@ -24,10 +24,13 @@ server.register(fastifyStatic, {
     root: path.join(path.join(process.cwd(), 'build/public'))
 });
 
+// types
+type parambasic = FastifyRequest<{ Params: { tid: string } }>
+
 // routes
 server.get('/style.css', async (request, reply) => { reply.sendFile('compiled.css') });
-server.get('/', async (request, reply) => {
-    const orders = await petitio(`http://localhost:3000/orders/528396/`).json();
+server.get('/:tid', async (request: parambasic, reply: FastifyReply) => {
+    const orders = await petitio(`http://localhost:3000/orders/${request.params?.tid}/`).json();
     reply.view('index', { orders: orders.orderlist });
 });
 
