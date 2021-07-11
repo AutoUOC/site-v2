@@ -1,0 +1,40 @@
+{
+    "name": "autouoc-site",
+    "version": "1.0.0",
+    "description": "",
+    "main": "build/index.js",
+    "type": "module",
+    "scripts": {
+        "start": "tsc && tscp && node --experimental-specifier-resolution=node .",
+        "dev": "nodemon --watch 'src/**' --ext 'ts,json' --ignore 'src/**/*.spec.ts' --exec 'tsc && tscp && node --experimental-specifier-resolution=node .'",
+        "buildcss": "postcss build/public/style.css -o build/public/compiled.css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AutoUOC/site-v2.git"
+    },
+    "keywords": [
+        "scratch"
+    ],
+    "author": "bremea",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AutoUOC/site-v2/issues"
+    },
+    "homepage": "https://github.com/AutoUOC/site-v2#readme",
+    "devDependencies": {
+        "autoprefixer": "^10.2.6",
+        "postcss": "^8.3.5",
+        "tailwindcss": "^2.2.4"
+    },
+    "dependencies": {
+        "@types/ejs": "^3.0.7",
+        "@types/node": "^16.3.1",
+        "daisyui": "^1.6.1",
+        "dotenv": "^10.0.0",
+        "ejs": "^3.1.6",
+        "fastify": "^3.19.0",
+        "fastify-static": "^4.2.2",
+        "point-of-view": "^4.15.1"
+    }
+}
