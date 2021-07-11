@@ -32,7 +32,7 @@ server.get('/style.css', async (request, reply) => { reply.sendFile('compiled.cs
 server.get('/', async (request: FastifyRequest, reply: FastifyReply) => {
     reply.view('home');
 });
-server.get('/:tid', async (request: parambasic, reply: FastifyReply) => {
+server.get('/shop/:tid', async (request: parambasic, reply: FastifyReply) => {
     const orders = await petitio(`http://localhost:3069/orders/${request.params?.tid}/`).json();
     reply.view('index', { orders: orders.orderlist });
 });
