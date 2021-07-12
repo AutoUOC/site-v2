@@ -40,7 +40,7 @@ server.get('/shop/:tid', async (request: parambasic, reply: FastifyReply) => {
 // arc.io
 server.get('/arc-sw.js', async (request: FastifyRequest, reply: FastifyReply) => {
     const res = await petitio('https://arc.io/arc-sw.js').text();
-    reply.send(res);
+    reply.header('Content-Type', 'application/javascript; charset=utf-8').send(res);
 });
 
 // start
