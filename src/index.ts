@@ -37,6 +37,12 @@ server.get('/shop/:tid', async (request: parambasic, reply: FastifyReply) => {
     reply.view('index', { orders: orders.orderlist });
 });
 
+// arc.io
+server.get('/arc-sw.js', async (request: FastifyRequest, reply: FastifyReply) => {
+    const res = await petitio('https://arc.io/arc-sw.js').text();
+    reply.send(res);
+});
+
 // start
 const start = async () => {
     try {
